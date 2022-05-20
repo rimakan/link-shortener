@@ -2,9 +2,7 @@ import styles from "./LinkShortener.module.css";
 import { Button } from "../UI/Button";
 import { Result } from "./Result";
 import { useState } from "react";
-
-const API_TOKEN = "91261efe9b5153e40fa092c0c94a5038db587db8";
-const BASE_URL = "https://api-ssl.bitly.com/v4/shorten";
+import fetchData from "../fetchData";
 
 const LinkShortener = () => {
   const [link, setLink] = useState("");
@@ -28,21 +26,7 @@ const LinkShortener = () => {
         domain: "bit.ly",
       };
       setLink("");
-
-      try {
-        fetch(BASE_URL, {
-          method: "POST",
-          headers: {
-            Authorization: `${API_TOKEN}`,
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        })
-          .then((res) => res.json())
-          .then((data) => setResult(data.link));
-      } catch (error) {
-        console.error(error.message);
-      }
+      fetchData(data, setResult);
     }
   };
 
