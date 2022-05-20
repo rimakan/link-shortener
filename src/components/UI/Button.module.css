@@ -1,0 +1,12 @@
+.link__btn {
+    padding: 1rem 2rem;
+    background-color: transparent;
+    border: 1px solid #000;
+    border-radius: 5px;
+    font-size: 1.8rem;
+    transition: all 0.2s ease;
+}
+
+.link__btn:hover {
+    background-color: #ccc;
+}

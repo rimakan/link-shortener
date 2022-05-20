@@ -1,0 +1,60 @@
+main {
+    max-width: 140rem;
+    padding: 4.8rem 9.6rem;
+}
+
+.header {
+    text-align: center;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 1px #000;
+    padding: 4.8rem;
+    margin: 0 auto;
+    margin-top: 6rem;
+    max-width: 90rem;
+    background-color: #eee
+}
+
+.link__input {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.link__title {
+    font-size: 6rem;
+    margin-bottom: 2rem;
+}
+
+.link__input-label {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.link__input-field {
+   padding: 1rem;
+   width: 100%;
+   border: 1px solid #000;
+   border-radius: 5px;
+   margin-bottom: 1rem;
+}
+
+.link__actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.invalid {
+    border-color: #f00;
+}
+
+.link__error-msg {
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    color: #f00;
+}

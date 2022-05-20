@@ -1,0 +1,20 @@
+.link__result {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.link__shortened-link {
+    text-decoration: none;
+    font-size: 2rem;
+    transition: all 0.3s ease;
+}
+
+.link__shortened-link:link,
+.link__shortened-link:visited {
+    color: #333;
+}
+
+.link__shortened-link:hover,
+.link__shortened-link:active {
+    color: #000;
+}
