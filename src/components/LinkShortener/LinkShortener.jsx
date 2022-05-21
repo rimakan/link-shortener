@@ -58,7 +58,7 @@ const LinkShortener = () => {
             )}
           </div>
           <div className={styles["link__actions"]}>
-            <Button getLink={submitHandler}>Submit</Button>
+            <Button getLink={submitHandler} disable={!link}>Submit</Button>
           </div>
           {result ? <Result href={result}>{result}</Result> : ""}
         </div>
