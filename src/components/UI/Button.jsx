@@ -6,6 +6,7 @@ export const Button = (props) => {
       className={styles['link__btn']}
       type="submit"
       onClick={props.getLink}
+      disabled={props.disable}
     >
       {props.children}
     </button>

@@ -10,8 +10,14 @@ const LinkShortener = () => {
   const [isValid, setIsValid] = useState(true);
 
   const inputHandler = (event) => {
-    if (event.target.value.trim().length > 0) setIsValid(true);
-    setLink(event.target.value);
+    if (event.target.value.trim().length >= 1) {
+      setIsValid(true);
+      setLink(event.target.value);
+    } else {
+      setLink("");
+      setIsValid(false);
+      return;
+    }
   };
 
   const submitHandler = (event) => {
@@ -58,7 +64,9 @@ const LinkShortener = () => {
             )}
           </div>
           <div className={styles["link__actions"]}>
-            <Button getLink={submitHandler}>Submit</Button>
+            <Button getLink={submitHandler} disable={!link}>
+              Submit
+            </Button>
           </div>
           {result ? <Result href={result}>{result}</Result> : ""}
         </div>

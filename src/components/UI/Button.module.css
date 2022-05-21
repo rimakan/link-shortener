@@ -1,12 +1,20 @@
 .link__btn {
     padding: 1rem 2rem;
-    background-color: transparent;
-    border: 1px solid #000;
+    background-color: #4b83ec;
+    border: none;
     border-radius: 5px;
     font-size: 1.8rem;
     transition: all 0.2s ease;
+    color: #fff;
+    font-weight: 200;
 }
 
-.link__btn:hover {
-    background-color: #ccc;
+.link__btn:hover,
+.link__btn:active {
+    background-color: #1f5dcf;
+}
+
+.link__btn:disabled {
+    background-color: #b0cafb;
+    border-color: #333;
 }
