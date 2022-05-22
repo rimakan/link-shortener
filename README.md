@@ -11,7 +11,7 @@ My first app written in React. As its name says, the app allows us to make long 
 
 ## HOW TO RUN
 
-1. Clone the repo to your local machine ```https://github.com/rimakan/link-shortener.git```
+1. Clone the repo to your local machine ```git clone https://github.com/rimakan/link-shortener.git```
 
 2. Go to the created repo and run ```npm install```
 
