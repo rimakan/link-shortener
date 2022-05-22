@@ -6,16 +6,24 @@ import fetchData from "../fetchData";
 
 const LinkShortener = () => {
   const [link, setLink] = useState("");
+  const [isLinkValid, setIsLinkValid] = useState(true);
   const [result, setResult] = useState("");
   const [isValid, setIsValid] = useState(true);
 
   const inputHandler = (event) => {
     if (event.target.value.trim().length >= 1) {
-      setIsValid(true);
       setLink(event.target.value);
+      setIsValid(true);
     } else {
       setLink("");
       setIsValid(false);
+      return;
+    }
+
+    if (event.target.value.trim().includes("https://")) {
+      setIsLinkValid(true);
+    } else {
+      setIsLinkValid(false);
       return;
     }
   };
@@ -23,16 +31,17 @@ const LinkShortener = () => {
   const submitHandler = (event) => {
     event.preventDefault();
 
-    if (link.trim().length === 0) {
+    if (link.trim().length === 0 && !link.trim().includes("https://")) {
       setIsValid(false);
+      setIsLinkValid(false);
       return;
     } else {
       const data = {
         long_url: link,
         domain: "bit.ly",
       };
-      setLink("");
       fetchData(data, setResult);
+      setLink("");
     }
   };
 
@@ -62,9 +71,14 @@ const LinkShortener = () => {
                 The input can't be blank!
               </p>
             )}
+            {!isLinkValid && (
+              <p className={styles["link__error-msg"]}>
+                The link should start with 'https://'!
+              </p>
+            )}
           </div>
           <div className={styles["link__actions"]}>
-            <Button getLink={submitHandler} disable={!link}>
+            <Button getLink={submitHandler} disable={!link || !isLinkValid}>
               Submit
             </Button>
           </div>
